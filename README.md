@@ -52,7 +52,7 @@ New dependencies that you can use after adding this service:
  tag | type |description | notes
 -----|------|------------|-------
 `postgres` | pg.Client | The PostgreSQL client | Doesn't connect until the service is started
-`sql` | SqlInterface | The generic SQL interface | Promise-based `query` pattern
+`sql` | SqlInterface | The generic SQL interface | Promise-based `query` interface
 
 ## Configs
 
