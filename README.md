@@ -19,31 +19,32 @@ var Application       = require('billy').Application;
 var PostgreSqlService = require('billy-sql-postgres');
 
 var app = new Application();
+
 app.service(PostgreSqlService);
 app.config('postgres.url', 'posgres://user:pw@127.0.0.1:5432');
-
-app.start();
 ```
 
-While the `postgres` dependency is available when the service is instantiated,
-it doesn't actaully connect until the application begins to start. Make sure to
-wait until the `PostgreSqlService` has started before attempting to run any
-queries.
-
-Assuming `MyService` is added after `PostgreSqlService`:
+The postgres client is available as `postgres`
 
 ```javascript
-function MyService(postgres)
-{
-  this.postgres = postgres;
-}
-
-MyService.prototype.start = function()
-{
-  this.postgres.query( ... );
-};
+app.service(function(postgres) {
+  postgres.query('select * from widgets', function(err, results) {
+    ...
+  });
+});
 ```
 
+Or use the generic, promise-based Billy facade:
+
+```javascript
+app.service(function(sql) {
+  sql.query('select * from widgets').then(function(rows) {
+    ...
+  });
+});
+```
+
+Queries will be queued and executed as soon as the client connects.
 
 ## Injectables
 
