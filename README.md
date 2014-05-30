@@ -24,7 +24,9 @@ app.service(PostgreSqlService);
 app.config('postgres.url', 'posgres://user:pw@127.0.0.1:5432');
 ```
 
-The postgres client is available as `postgres`
+The postgres client, provided by the [pg
+module](https://github.com/brianc/node-postgres/wiki/Client), is available to
+any injected objects as `postgres`:
 
 ```javascript
 app.service(function(postgres) {
