@@ -54,8 +54,8 @@ New dependencies that you can use after adding this service:
 
  tag | type |description | notes
 -----|------|------------|-------
-`postgres` | pg.Client | The PostgreSQL client | Doesn't connect until the service is started
-`sql` | SqlInterface | The generic SQL interface | Promise-based `query` interface
+`postgres` | `pg.Client` | The PostgreSQL client | Doesn't connect until the service is started
+`sql` | `SqlInterface` | The generic SQL interface | Promise-based `query` interface
 
 ## Configs
 
@@ -63,7 +63,7 @@ Available config properties:
 
  config | type | description | default value | notes
 --------|------|-------------|---------------|------
-`postgres.url` | string | The connection string | null | The service will error out if not provided
+`postgres.url` | `string` | The connection string | `null` | The service will error out if not provided
 
 ## Testing
 
