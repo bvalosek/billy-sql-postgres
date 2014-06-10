@@ -1,5 +1,9 @@
 # Change History
 
+## 1.1.0 (2014-06-10)
+
+* Using connection pooling on `pg` object
+
 ## 1.0.1 (2014-05-28)
 
 * PostgresFacade tests
