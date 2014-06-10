@@ -3,8 +3,8 @@
 [![Build Status](https://travis-ci.org/bvalosek/billy-sql-postgres.png?branch=master)](https://travis-ci.org/bvalosek/billy-sql-postgres)
 [![NPM version](https://badge.fury.io/js/billy-sql-postgres.png)](http://badge.fury.io/js/billy-sql-postgres)
 
-A [Billy](https://github.com/bvalosek/billy) service that connects to a
-PostgreSQL database.
+A [Billy](https://github.com/bvalosek/billy) service that allows for executing
+queries against a PostgreSQL database.
 
 ## Install
 
@@ -15,7 +15,7 @@ $ npm install billy-sql-postgres
 ## Usage
 
 ```javascript
-var Application       = require('billy').Application;
+var Application       = require('billy');
 var PostgreSqlService = require('billy-sql-postgres');
 
 var app = new Application();
