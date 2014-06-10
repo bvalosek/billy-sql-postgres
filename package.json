@@ -1,7 +1,7 @@
 {
   "name": "billy-sql-postgres",
   "version": "1.0.1",
-  "description": "A Billy service that connects to a PostgreSQL database",
+  "description": "A Billy service that allows for executing queries against a PostgreSQL datdabase",
   "keywords": [
     "billy",
     "sql",
@@ -29,14 +29,14 @@
     "url": "git@github.com:bvalosek/billy-sql-postgres.git"
   },
   "devDependencies": {
-    "tape": "^2.13.1"
+    "tape": "^2.13.2"
   },
   "dependencies": {
-    "billy": "^1.2.1",
+    "billy": "1.x",
     "bluebird": "^2.0.7",
-    "debug": "^0.8.1",
+    "debug": "^1.0.1",
     "nodemock": "^0.3.4",
-    "pg": "^3.2.0",
+    "pg": "^3.3.0",
     "sql-params": "^1.0.0"
   }
 }

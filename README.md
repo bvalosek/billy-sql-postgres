@@ -15,28 +15,17 @@ $ npm install billy-sql-postgres
 ## Usage
 
 ```javascript
-var Application       = require('billy');
-var PostgreSqlService = require('billy-sql-postgres');
+var Application = require('billy');
+var SqlService  = require('billy-sql-postgres');
 
 var app = new Application();
 
-app.service(PostgreSqlService);
+app.service(SqlService);
 app.config('postgres.url', 'posgres://user:pw@127.0.0.1:5432');
 ```
 
-The postgres client, provided by the [pg
-module](https://github.com/brianc/node-postgres/wiki/Client), is available to
-any injected objects as `postgres`:
+Use the `sql` dependency in any service or other injected objects:
 
-```javascript
-app.service(function(postgres) {
-  postgres.query('select * from widgets', function(err, results) {
-    ...
-  });
-});
-```
-
-Or use the generic, promise-based Billy facade:
 
 ```javascript
 app.service(function(sql) {
@@ -46,7 +35,9 @@ app.service(function(sql) {
 });
 ```
 
-Queries will be queued and executed as soon as the client connects.
+Queries are all queued and executed via connections from the internal
+connection pool on the `pg` global object.
+
 
 ## Injectables
 
@@ -54,8 +45,7 @@ New dependencies that you can use after adding this service:
 
  tag | type |description | notes
 -----|------|------------|-------
-`postgres` | `pg.Client` | The PostgreSQL client | Doesn't connect until the service is started
-`sql` | `SqlInterface` | The generic SQL interface | Promise-based `query` interface
+`sql` | `PostgresFacade` | The generic SQL interface | Promise-based `query` interface
 
 ## Configs
 
