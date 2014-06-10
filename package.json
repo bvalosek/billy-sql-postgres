@@ -1,6 +1,6 @@
 {
   "name": "billy-sql-postgres",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A Billy service that allows for executing queries against a PostgreSQL datdabase",
   "keywords": [
     "billy",
