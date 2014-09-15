@@ -6,7 +6,8 @@
     "billy",
     "sql",
     "postgres",
-    "postgresql"
+    "postgresql",
+    "billy-service"
   ],
   "author": {
     "name": "Brandon Valosek",

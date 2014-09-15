@@ -1,5 +1,9 @@
 # Change History
 
+## 1.2.3 (2014-09-15)
+
+* Added `billy-service` npm tag
+
 ## 1.2.2 (2014-06-25)
 
 * Fixed issue with pool stats logging
